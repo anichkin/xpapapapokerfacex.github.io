@@ -78,7 +78,7 @@ class Counter(YMBase):
         self.id = id
         super().__init__(token)
 
-    def get_base_mentrics(self, metric):
+    def get_base_metrics(self, metric):
         headers = self.get_headers()
         params = {
             'id': self.id,
@@ -98,13 +98,13 @@ for c in counters:
     pprint(ilyaaa.get_counter_grands(c['id']))
     print('----------------------------------------------------------')
     counter = Counter(c['id'], TOKEN)
-    pprint(counter.get_base_mentrics('ym:s:visits'))  # Суммарное количество визитов
+    pprint(counter.get_base_metrics('ym:s:visits'))  # Суммарное количество визитов
     print('----------------------------------------------------------')
-    pprint(counter.get_base_mentrics('ym:s:pageviews'))  # Число просмотров страниц на сайте за отчетный период
+    pprint(counter.get_base_metrics('ym:s:pageviews'))  # Число просмотров страниц на сайте за отчетный период
     print('----------------------------------------------------------')
-    pprint(counter.get_base_mentrics('ym:s:users'))  # Количество уникальных посетителей
+    pprint(counter.get_base_metrics('ym:s:users'))  # Количество уникальных посетителей
     print('----------------------------------------------------------')
-    pprint(counter.get_base_mentrics('ym:s:percentNewVisitors'))
+    pprint(counter.get_base_metrics('ym:s:percentNewVisitors'))
 
 
 
